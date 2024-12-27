@@ -12,7 +12,7 @@
     </div>
     <div class="row mt-4">
       <div class="col">
-        <ProfileMonroe />
+        <ProfileOne />
       </div>
     </div>
   </div>
@@ -20,12 +20,12 @@
 
 <script>
 import StaticForm from './components/static-form.vue'
-import ProfileMonroe from './components/profile-monroe.vue'
+import ProfileOne from './components/profile-one.vue'
 
 export default {
   components: {
     StaticForm,
-    ProfileMonroe,
+    ProfileOne,
   },
 }
 </script>

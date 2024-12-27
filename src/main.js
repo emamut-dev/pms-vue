@@ -1,9 +1,19 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import 'bootstrap/dist/css/bootstrap.min.css' // Estilos de Bootstrap
-import 'bootstrap/dist/js/bootstrap.bundle.min.js' // Scripts de Bootstrap
+// Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
+// Icons
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
+// Fonts
+import '@fontsource/poppins'
+import '@fontsource/poppins/400-italic.css'
+import '@fontsource/poppins/700.css'
+
+// Custom CSS
 import './assets/main.css'
 
 createApp(App).mount('#app')
