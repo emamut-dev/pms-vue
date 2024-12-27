@@ -13,7 +13,7 @@
         <p style="display: unset"></p>
         <ul
           style="
-            background-image: url(https://i.ibb.co/Kzd4TpK/Fondo-perfil.png);
+            background-image: url(./img/fondo-perfil-1.png);
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-size: cover;
@@ -21,6 +21,7 @@
             margin-right: -10em;
             padding-bottom: 35em;
             padding-left: 10em;
+            width: 100vw;
           "
         >
           <br /><img
