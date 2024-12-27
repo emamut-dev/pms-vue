@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="col-md-2 text-center">
-        <button class="btn btn-success btn-lg mt-1">Enviar</button>
+        <button class="btn btn-success btn-lg mt-1">Enviar <i class="bi bi-send"></i></button>
       </div>
     </div>
   </form>
