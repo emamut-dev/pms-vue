@@ -16,6 +16,7 @@
 
 <script>
 import { IconHeartFilled } from '@tabler/icons-vue'
+
 export default {
   components: {
     IconHeartFilled,
