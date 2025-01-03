@@ -10,7 +10,9 @@
         <StaticForm />
       </div>
     </div>
-    <div class="row mt-4">
+  </div>
+  <div class="container-fluid">
+    <div class="row mt-5">
       <div class="col">
         <ProfileOne />
       </div>

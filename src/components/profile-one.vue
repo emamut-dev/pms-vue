@@ -12,8 +12,8 @@
       <div>
         <p style="display: unset"></p>
         <ul
+          :style="{ backgroundImage: `url(${imgFondo})` }"
           style="
-            background-image: url(./img/fondo-perfil-1.png);
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-size: cover;
@@ -24,10 +24,7 @@
             width: 100vw;
           "
         >
-          <br /><img
-            src="https://i.ibb.co/y836YK2/Contenido-perfil-2.png"
-            style="width: 60%; margin-left: 20%"
-          /><br />
+          <br /><img :src="imgFront" style="width: 60%; margin-left: 20%" /><br />
           <p
             style="
               text-align: left;
@@ -49,28 +46,19 @@
                 display: block;
                 margin: 10px 0 0 -64px;
               "
-              ><br /><a href="https://x.com/BedoyaLina21" rel="nofollow" target="_blank"
+              ><br /><a :href="xURL" rel="nofollow" target="_blank"
                 ><img
                   src="https://i.ibb.co/5r6mztq/x.png"
                   style="margin: 0 auto; float: left; width: 12%" /></a
-              ><br /><a
-                href="https://www.amazon.com/hz/wishlist/ls/2MT1CT4GI5JF3"
-                rel="nofollow"
-                target="_blank"
+              ><br /><a :href="amazonURL" rel="nofollow" target="_blank"
                 ><img
                   src="https://i.ibb.co/x7J16w0/amazon.png"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
-              ><br /><a
-                href="https://www.instagram.com/lina.bedoya.21/"
-                rel="nofollow"
-                target="_blank"
+              ><br /><a :href="instagramURL" rel="nofollow" target="_blank"
                 ><img
                   src="https://i.ibb.co/2WYBdsR/instagram.png"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
-              ><br /><br /><a
-                href="https://www.lovense.com/wish-list/ld7s"
-                rel="nofollow"
-                target="_blank"
+              ><br /><br /><a :href="lovenseURL" rel="nofollow" target="_blank"
                 ><img
                   src="https://i.ibb.co/VHXWZtp/4.png"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
@@ -85,5 +73,12 @@
 </template>
 
 <script>
-export default {}
+import { useProfile1Store } from '@/stores/profile1'
+
+export default {
+  setup() {
+    const { imgFondo, imgFront, xURL, amazonURL, instagramURL, lovenseURL } = useProfile1Store()
+    return { imgFondo, imgFront, xURL, amazonURL, instagramURL, lovenseURL }
+  },
+}
 </script>

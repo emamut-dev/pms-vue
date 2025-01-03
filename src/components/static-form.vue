@@ -1,45 +1,127 @@
 <template>
   <form>
     <div class="row mt-4">
-      <div class="col">
-        <div class="form-floating">
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-text" id="background-url"><IconLayersSelectedBottom /></span>
           <input
             type="url"
             class="form-control"
             id="img-fondo"
-            aria-describedby="nameHelp"
-            placeholder="https://example.com/image.jpg"
+            aria-describedby="background-url"
+            placeholder="URL imagen de fondo"
+            v-model="imgFondo"
           />
-          <label for="img-fondo">URL imagen de fondo</label>
-          <div class="form-text">Ejemplo: https://www.example.com/image.png</div>
         </div>
+        <div class="form-text">Ejemplo: https://www.example.com/image.png</div>
       </div>
-      <div class="col">
-        <div class="form-floating">
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-text" id="front-url"><IconLayersSelected /></span>
           <input
             type="url"
             class="form-control"
             id="img-superior"
-            aria-describedby="nameHelp"
-            placeholder="https://example.com/image.jpg"
+            aria-describedby="front-url"
+            placeholder="URL imagen superior"
+            v-model="imgFront"
           />
-          <label for="img-fondo">URL imagen superior</label>
-          <div class="form-text">Ejemplo: https://www.example.com/image.png</div>
+        </div>
+        <div class="form-text">Ejemplo: https://www.example.com/image.png</div>
+      </div>
+    </div>
+    <hr />
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-text" id="x-url"><IconBrandX /></span>
+          <input
+            type="url"
+            class="form-control"
+            id="img-superior"
+            aria-describedby="x-url"
+            placeholder="URL de X"
+            v-model="xURL"
+          />
         </div>
       </div>
-      <div class="col-md-2 text-center">
-        <button class="btn btn-success btn-lg mt-1">Exportar <IconCloudDownload /></button>
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-text" id="amazon-url"><IconBrandAmazon /></span>
+          <input
+            type="url"
+            class="form-control"
+            id="img-superior"
+            aria-describedby="amazon-url"
+            placeholder="URL de Amazon"
+            v-model="amazonURL"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-text" id="instagram-url"><IconBrandInstagram /></span>
+          <input
+            type="url"
+            class="form-control"
+            id="img-superior"
+            aria-describedby="instagram-url"
+            placeholder="URL de Amazon"
+            v-model="instagramURL"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-text" id="lovense-url"><IconFlame /></span>
+          <input
+            type="url"
+            class="form-control"
+            id="img-superior"
+            aria-describedby="lovense-url"
+            placeholder="URL de Amazon"
+            v-model="lovenseURL"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col text-center">
+        <div class="d-grid">
+          <button class="btn btn-success">Exportar <IconCloudDownload /></button>
+        </div>
       </div>
     </div>
   </form>
 </template>
 
 <script>
-import { IconCloudDownload } from '@tabler/icons-vue'
+import {
+  IconCloudDownload,
+  IconLayersSelectedBottom,
+  IconLayersSelected,
+  IconBrandX,
+  IconBrandAmazon,
+  IconBrandInstagram,
+  IconFlame,
+} from '@tabler/icons-vue'
+import { useProfile1Store } from '@/stores/profile1'
 
 export default {
+  setup() {
+    const { imgFondo, imgFront, xURL, amazonURL, instagramURL, lovenseURL } = useProfile1Store()
+    return { imgFondo, imgFront, xURL, amazonURL, instagramURL, lovenseURL }
+  },
   components: {
     IconCloudDownload,
+    IconLayersSelectedBottom,
+    IconLayersSelected,
+    IconBrandX,
+    IconBrandAmazon,
+    IconBrandInstagram,
+    IconFlame,
   },
 }
 </script>

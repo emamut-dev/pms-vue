@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import App from './App.vue'
 
 // Bootstrap
@@ -13,4 +14,8 @@ import '@fontsource/poppins/700.css'
 // Custom CSS
 import './assets/main.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+const pinia = createPinia()
+
+app.use(pinia)
+app.mount('#app')
