@@ -28,10 +28,18 @@
         </div>
       </div>
       <div class="col-md-2 text-center">
-        <button class="btn btn-success btn-lg mt-1">
-          Exportar <i class="bi bi-cloud-arrow-down"></i>
-        </button>
+        <button class="btn btn-success btn-lg mt-1">Exportar <IconCloudDownload /></button>
       </div>
     </div>
   </form>
 </template>
+
+<script>
+import { IconCloudDownload } from '@tabler/icons-vue'
+
+export default {
+  components: {
+    IconCloudDownload,
+  },
+}
+</script>

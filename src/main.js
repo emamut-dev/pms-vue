@@ -5,9 +5,6 @@ import App from './App.vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
-// Icons
-import 'bootstrap-icons/font/bootstrap-icons.css'
-
 // Fonts
 import '@fontsource/poppins'
 import '@fontsource/poppins/400-italic.css'
