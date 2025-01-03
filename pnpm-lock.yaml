@@ -14,6 +14,9 @@ importers:
       '@tabler/icons-vue':
         specifier: ^3.26.0
         version: 3.26.0(vue@3.5.13)
+      pinia:
+        specifier: ^2.3.0
+        version: 2.3.0(vue@3.5.13)
       vue:
         specifier: ^3.5.13
         version: 3.5.13
@@ -720,6 +723,9 @@ packages:
   '@vue/compiler-ssr@3.5.13':
     resolution: {integrity: sha512-wMH6vrYHxQl/IybKJagqbquvxpWCuVYpoUJfCqFZwa/JY1GdATAQ+TgVtgrwwMZ0D07QhA99rs/EAAWfvG6KpA==}
 
+  '@vue/devtools-api@6.6.4':
+    resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
+
   '@vue/devtools-core@7.6.8':
     resolution: {integrity: sha512-8X4roysTwzQ94o7IobjVcOd1aZF5iunikrMrHPI2uUdigZCi2kFTQc7ffYiFiTNaLElCpjOhCnM7bo7aK1yU7A==}
     peerDependencies:
@@ -1334,6 +1340,15 @@ packages:
     engines: {node: '>=0.10'}
     hasBin: true
 
+  pinia@2.3.0:
+    resolution: {integrity: sha512-ohZj3jla0LL0OH5PlLTDMzqKiVw2XARmC1XYLdLWIPBMdhDW/123ZWr4zVAhtJm+aoSkFa13pYXskAvAscIkhQ==}
+    peerDependencies:
+      typescript: '>=4.4.4'
+      vue: ^2.7.0 || ^3.5.11
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   postcss-selector-parser@6.1.2:
     resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
     engines: {node: '>=4'}
@@ -1698,6 +1713,17 @@ packages:
       tsx:
         optional: true
       yaml:
+        optional: true
+
+  vue-demi@0.14.10:
+    resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
+    engines: {node: '>=12'}
+    hasBin: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
         optional: true
 
   vue-eslint-parser@9.4.3:
@@ -2325,6 +2351,8 @@ snapshots:
       '@vue/compiler-dom': 3.5.13
       '@vue/shared': 3.5.13
 
+  '@vue/devtools-api@6.6.4': {}
+
   '@vue/devtools-core@7.6.8(vite@6.0.3(sass-embedded@1.83.0)(sass@1.83.0))(vue@3.5.13)':
     dependencies:
       '@vue/devtools-kit': 7.6.8
@@ -2944,6 +2972,14 @@ snapshots:
 
   pidtree@0.6.0: {}
 
+  pinia@2.3.0(vue@3.5.13):
+    dependencies:
+      '@vue/devtools-api': 6.6.4
+      vue: 3.5.13
+      vue-demi: 0.14.10(vue@3.5.13)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+
   postcss-selector-parser@6.1.2:
     dependencies:
       cssesc: 3.0.0
@@ -3263,6 +3299,10 @@ snapshots:
       fsevents: 2.3.3
       sass: 1.83.0
       sass-embedded: 1.83.0
+
+  vue-demi@0.14.10(vue@3.5.13):
+    dependencies:
+      vue: 3.5.13
 
   vue-eslint-parser@9.4.3(eslint@9.16.0):
     dependencies:
