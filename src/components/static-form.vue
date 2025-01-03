@@ -10,7 +10,7 @@
             id="img-fondo"
             aria-describedby="background-url"
             placeholder="URL imagen de fondo"
-            v-model="imgFondo"
+            v-model="formData.imgFondo"
           />
         </div>
         <div class="form-text">Ejemplo: https://example.com/image.png</div>
@@ -24,7 +24,7 @@
             id="img-superior"
             aria-describedby="front-url"
             placeholder="URL imagen superior"
-            v-model="imgFront"
+            v-model="formData.imgFront"
           />
         </div>
         <div class="form-text">Ejemplo: https://example.com/image.png</div>
@@ -41,7 +41,7 @@
             id="img-superior"
             aria-describedby="x-url"
             placeholder="URL de X"
-            v-model="xURL"
+            v-model="formData.xURL"
           />
         </div>
       </div>
@@ -54,7 +54,7 @@
             id="img-superior"
             aria-describedby="amazon-url"
             placeholder="URL de Amazon"
-            v-model="amazonURL"
+            v-model="formData.amazonURL"
           />
         </div>
       </div>
@@ -69,7 +69,7 @@
             id="img-superior"
             aria-describedby="instagram-url"
             placeholder="URL de Amazon"
-            v-model="instagramURL"
+            v-model="formData.instagramURL"
           />
         </div>
       </div>
@@ -82,7 +82,7 @@
             id="img-superior"
             aria-describedby="lovense-url"
             placeholder="URL de Amazon"
-            v-model="lovenseURL"
+            v-model="formData.lovenseURL"
           />
         </div>
       </div>
@@ -90,14 +90,12 @@
     <div class="row mt-4">
       <div class="col-md-6">
         <div class="d-grid">
-          <button class="btn btn-warning" type="submit" disabled>
-            Guardar <IconDeviceFloppy />
-          </button>
+          <button class="btn btn-warning" type="submit">Guardar <IconDeviceFloppy /></button>
         </div>
       </div>
       <div class="col-md-6">
         <div class="d-grid">
-          <button class="btn btn-success" disabled>Exportar <IconCloudDownload /></button>
+          <button class="btn btn-success">Exportar <IconCloudDownload /></button>
         </div>
       </div>
     </div>
@@ -119,8 +117,8 @@ import { useProfile1Store } from '@/stores/profile1'
 
 export default {
   setup() {
-    const { imgFondo, imgFront, xURL, amazonURL, instagramURL, lovenseURL } = useProfile1Store()
-    return { imgFondo, imgFront, xURL, amazonURL, instagramURL, lovenseURL }
+    const { formData } = useProfile1Store()
+    return { formData }
   },
   components: {
     IconDeviceFloppy,
