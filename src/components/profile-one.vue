@@ -12,7 +12,7 @@
       <div>
         <p style="display: unset"></p>
         <ul
-          :style="{ backgroundImage: `url(${imgFondo})` }"
+          :style="{ backgroundImage: `url(${formData.imgFondo})` }"
           style="
             background-attachment: fixed;
             background-repeat: no-repeat;
@@ -24,7 +24,7 @@
             width: 100vw;
           "
         >
-          <br /><img :src="imgFront" style="width: 60%; margin-left: 20%" /><br />
+          <br /><img :src="formData.imgFront" style="width: 60%; margin-left: 20%" /><br />
           <p
             style="
               text-align: left;
@@ -46,19 +46,19 @@
                 display: block;
                 margin: 10px 0 0 -64px;
               "
-              ><br /><a :href="xURL" rel="nofollow" target="_blank"
+              ><br /><a :href="formData.xURL" rel="nofollow" target="_blank"
                 ><img
                   src="https://i.ibb.co/5r6mztq/x.png"
                   style="margin: 0 auto; float: left; width: 12%" /></a
-              ><br /><a :href="amazonURL" rel="nofollow" target="_blank"
+              ><br /><a :href="formData.amazonURL" rel="nofollow" target="_blank"
                 ><img
                   src="https://i.ibb.co/x7J16w0/amazon.png"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
-              ><br /><a :href="instagramURL" rel="nofollow" target="_blank"
+              ><br /><a :href="formData.instagramURL" rel="nofollow" target="_blank"
                 ><img
                   src="https://i.ibb.co/2WYBdsR/instagram.png"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
-              ><br /><br /><a :href="lovenseURL" rel="nofollow" target="_blank"
+              ><br /><br /><a :href="formData.lovenseURL" rel="nofollow" target="_blank"
                 ><img
                   src="https://i.ibb.co/VHXWZtp/4.png"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
@@ -77,8 +77,8 @@ import { useProfile1Store } from '@/stores/profile1'
 
 export default {
   setup() {
-    const { imgFondo, imgFront, xURL, amazonURL, instagramURL, lovenseURL } = useProfile1Store()
-    return { imgFondo, imgFront, xURL, amazonURL, instagramURL, lovenseURL }
+    const { formData } = useProfile1Store()
+    return { formData }
   },
 }
 </script>
