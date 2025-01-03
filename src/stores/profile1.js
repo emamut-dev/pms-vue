@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useProfile1Store = defineStore('profile1', {
   state: () => ({
-    imgFondo: './img/fondo-perfil-1.png',
+    imgFondo: 'https://i.ibb.co/6mwYwXS/fondo-perfil-1.png',
     imgFront: 'https://i.ibb.co/y836YK2/Contenido-perfil-2.png',
     xURL: 'https://x.com/emamutDev',
     amazonURL: 'https://www.amazon.com/hz/wishlist/ls/1HEC3UPGS8A7Q',
