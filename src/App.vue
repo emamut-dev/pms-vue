@@ -18,18 +18,19 @@
       </div>
     </div>
   </div>
+  <MainFooter />
 </template>
 
 <script>
 import StaticForm from './components/static-form.vue'
 import ProfileOne from './components/profile-one.vue'
+import MainFooter from './components/main-footer.vue'
 
 export default {
   components: {
+    MainFooter,
     StaticForm,
     ProfileOne,
   },
 }
 </script>
-
-<style></style>
