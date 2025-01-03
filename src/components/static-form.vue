@@ -13,7 +13,7 @@
             v-model="imgFondo"
           />
         </div>
-        <div class="form-text">Ejemplo: https://www.example.com/image.png</div>
+        <div class="form-text">Ejemplo: https://example.com/image.png</div>
       </div>
       <div class="col-md-6">
         <div class="input-group">
@@ -27,7 +27,7 @@
             v-model="imgFront"
           />
         </div>
-        <div class="form-text">Ejemplo: https://www.example.com/image.png</div>
+        <div class="form-text">Ejemplo: https://example.com/image.png</div>
       </div>
     </div>
     <hr />
@@ -88,9 +88,16 @@
       </div>
     </div>
     <div class="row mt-4">
-      <div class="col text-center">
+      <div class="col-md-6">
         <div class="d-grid">
-          <button class="btn btn-success">Exportar <IconCloudDownload /></button>
+          <button class="btn btn-warning" type="submit" disabled>
+            Guardar <IconDeviceFloppy />
+          </button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-grid">
+          <button class="btn btn-success" disabled>Exportar <IconCloudDownload /></button>
         </div>
       </div>
     </div>
@@ -99,6 +106,7 @@
 
 <script>
 import {
+  IconDeviceFloppy,
   IconCloudDownload,
   IconLayersSelectedBottom,
   IconLayersSelected,
@@ -115,6 +123,7 @@ export default {
     return { imgFondo, imgFront, xURL, amazonURL, instagramURL, lovenseURL }
   },
   components: {
+    IconDeviceFloppy,
     IconCloudDownload,
     IconLayersSelectedBottom,
     IconLayersSelected,
