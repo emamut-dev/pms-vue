@@ -42,7 +42,7 @@
                 width: 700px;
                 padding: 0;
                 display: block;
-                margin: 10px 0 0 0;
+                margin: 10px 0 0 -8px';
               "
               ><br /><a :href="formData.xURL" rel="nofollow" target="_blank"
                 ><img
