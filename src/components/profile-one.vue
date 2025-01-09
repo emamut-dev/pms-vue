@@ -17,14 +17,12 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-size: cover;
-            margin-left: -15em;
-            margin-right: -10em;
             padding-bottom: 35em;
             padding-left: 10em;
             width: 100vw;
           "
         >
-          <br /><img :src="formData.imgFront" style="width: 60%; margin-left: 20%" /><br />
+          <br /><img :src="formData.imgFront" style="width: 60%; margin-left: 21rem" /><br />
           <p
             style="
               text-align: left;
@@ -44,7 +42,7 @@
                 width: 700px;
                 padding: 0;
                 display: block;
-                margin: 10px 0 0 -64px;
+                margin: 10px 0 0 0;
               "
               ><br /><a :href="formData.xURL" rel="nofollow" target="_blank"
                 ><img

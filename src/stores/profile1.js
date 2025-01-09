@@ -4,7 +4,7 @@ export const useProfile1Store = defineStore('profile1', {
   state: () => ({
     formData: {
       imgFondo: 'https://i.ibb.co/6mwYwXS/fondo-perfil-1.png',
-      imgFront: 'https://i.ibb.co/y836YK2/Contenido-perfil-2.png',
+      imgFront: 'https://i.ibb.co/C0b8yBn/Copy-of-Contenido-perfil-2.png',
       xURL: 'https://x.com/emamutDev',
       amazonURL: 'https://www.amazon.com/hz/wishlist/ls/1HEC3UPGS8A7Q',
       instagramURL: 'https://www.instagram.com/emamutdev/',
