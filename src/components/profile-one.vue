@@ -32,7 +32,7 @@
               margin: 45px 0 0 41%;
             "
           >
-            <br /><br /><font
+            <br /><br /><span
               style="
                 float: left;
                 background-color: rgba(255, 255, 255, 0);
@@ -60,7 +60,7 @@
                 ><img
                   src="https://i.ibb.co/VHXWZtp/4.png"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
-              ><br /></font
+              ><br /></span
             ><br />
           </p>
         </ul>
