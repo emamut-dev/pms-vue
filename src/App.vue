@@ -3,11 +3,16 @@
     <div class="row mt-4">
       <div class="col">
         <h1 class="text-center">Generador de Perfiles</h1>
+        <small v-if="currentPath !== '/'"
+          ><RouterLink to="/" class="text-dark"> <IconChevronLeft /> Volver </RouterLink></small
+        >
       </div>
     </div>
   </div>
 
-  <RouterView />
+  <section style="min-height: 70vh">
+    <RouterView />
+  </section>
 
   <div class="container my-5">
     <hr />
@@ -25,11 +30,17 @@
 </template>
 
 <script>
-import { IconHeartFilled } from '@tabler/icons-vue'
+import { IconHeartFilled, IconChevronLeft } from '@tabler/icons-vue'
 
 export default {
+  computed: {
+    currentPath() {
+      return this.$route.path
+    },
+  },
   components: {
     IconHeartFilled,
+    IconChevronLeft,
   },
 }
 </script>
