@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-4">
+  <div class="container my-5">
     <hr />
     <div class="row justify-content-center">
       <div class="col">
