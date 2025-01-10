@@ -11,7 +11,7 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid">
+  <div class="container-fluid px-0">
     <div class="row mt-5">
       <div class="col">
         <ProfileOne />

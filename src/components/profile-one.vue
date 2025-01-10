@@ -17,14 +17,12 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-size: cover;
-            margin-left: -15em;
-            margin-right: -10em;
             padding-bottom: 35em;
             padding-left: 10em;
             width: 100vw;
           "
         >
-          <br /><img :src="formData.imgFront" style="width: 60%; margin-left: 20%" /><br />
+          <br /><img :src="formData.imgFront" style="width: 60%; margin-left: 21rem" /><br />
           <p
             style="
               text-align: left;
@@ -34,7 +32,7 @@
               margin: 45px 0 0 41%;
             "
           >
-            <br /><br /><font
+            <br /><br /><span
               style="
                 float: left;
                 background-color: rgba(255, 255, 255, 0);
@@ -44,25 +42,25 @@
                 width: 700px;
                 padding: 0;
                 display: block;
-                margin: 10px 0 0 -64px;
+                margin: 10px 0 0 -8px';
               "
               ><br /><a :href="formData.xURL" rel="nofollow" target="_blank"
                 ><img
-                  src="https://i.ibb.co/5r6mztq/x.png"
+                  :src="socialNetworksIcons[formData.iconsColor].x"
                   style="margin: 0 auto; float: left; width: 12%" /></a
               ><br /><a :href="formData.amazonURL" rel="nofollow" target="_blank"
                 ><img
-                  src="https://i.ibb.co/x7J16w0/amazon.png"
+                  :src="socialNetworksIcons[formData.iconsColor].amazon"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
               ><br /><a :href="formData.instagramURL" rel="nofollow" target="_blank"
                 ><img
-                  src="https://i.ibb.co/2WYBdsR/instagram.png"
+                  :src="socialNetworksIcons[formData.iconsColor].instagram"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
               ><br /><br /><a :href="formData.lovenseURL" rel="nofollow" target="_blank"
                 ><img
-                  src="https://i.ibb.co/VHXWZtp/4.png"
+                  :src="socialNetworksIcons[formData.iconsColor].lovense"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
-              ><br /></font
+              ><br /></span
             ><br />
           </p>
         </ul>
@@ -77,8 +75,8 @@ import { useProfile1Store } from '@/stores/profile1'
 
 export default {
   setup() {
-    const { formData } = useProfile1Store()
-    return { formData }
+    const { formData, socialNetworksIcons } = useProfile1Store()
+    return { formData, socialNetworksIcons }
   },
 }
 </script>
