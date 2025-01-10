@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center mt-4">
+    <div class="row justify-content-center mt-5">
       <div class="col-md-6">
         <div class="list-group">
           <RouterLink to="/profile-one" class="list-group-item list-group-item-action"
