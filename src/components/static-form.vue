@@ -106,7 +106,9 @@
       </div>
       <div class="col-md-6">
         <div class="d-grid">
-          <button class="btn btn-success">Exportar <IconCloudDownload /></button>
+          <button class="btn btn-success" @click="downloadFile" type="button">
+            Exportar <IconCloudDownload />
+          </button>
         </div>
       </div>
     </div>
@@ -128,9 +130,9 @@ import { useProfile1Store } from '@/stores/profile1'
 
 export default {
   setup() {
-    const { formData, updateIconsColor } = useProfile1Store()
+    const { formData, socialNetworksIcons, updateIconsColor } = useProfile1Store()
 
-    return { formData, updateIconsColor }
+    return { formData, socialNetworksIcons, updateIconsColor }
   },
   components: {
     IconCloudDownload,
@@ -142,18 +144,22 @@ export default {
     IconFlame,
     IconPalette,
   },
-  data() {
-    return {
-      profileOneTemplate: '',
-    }
-  },
   methods: {
     updateSelectValue(event) {
       this.updateIconsColor(event.target.value)
     },
-    startProfileOneTemplate() {
-      this.profileOneTemplate =
-        '<tr style="font-size:14px;font-weight:400;line-height:15px;vertical-align:top;text-align:left"><td style="font-size:14px;line-height:16px"><div><p style="display:unset"></p><ul style="background-image:url(https://i.ibb.co/PMKTZDt/Fondo-perfil.png);background-attachment:fixed;background-repeat:no-repeat;background-size:cover;margin-left:-15em;margin-right:-10em;padding-bottom:35em;padding-left:10em"><br><img src="https://i.ibb.co/4P8CvkB/Contenido-perfil-2.png" style="width:60%;margin-left:20%"><br><p style="text-align:left;line-height:0;width:700px;height:100px;margin:45px 0 0 41%"><br><br><font style="float:left;background-color:rgba(255,255,255,0);height:100px;overflow-y:hide;overflow-x:hide;width:700px;padding:0;display:block;margin:10px 0 0 -64px"><br><a href="https://x.com/ANAMARIA_RIIOS" rel="nofollow" target="_blank"><img src="https://i.ibb.co/TLfB2LK/x.png" style="margin:0 auto;float:left;width:12%"></a><br><a href="https://www.amazon.com/hz/wishlist/ls/2GCIOGB9BEX6X?ref_=wl_share" rel="nofollow" target="_blank"><img src="https://i.ibb.co/VVDh7mp/amazon.png" style="margin:0 0 0 60px;float:left;width:12%"></a><br><a href="https://www.instagram.com/maria_riios1/" rel="nofollow" target="_blank"><img src="https://i.ibb.co/bmWQYpC/instagram.png" style="margin:0 0 0 60px;float:left;width:12%"></a><br><br><a href="https://www.lovense.com/wish-list/azzckoa" rel="nofollow" target="_blank"><img src="https://i.ibb.co/d2dgcxs/lovense.png" style="margin:0 0 0 60px;float:left;width:12%"></a><br></font><br></p></ul><p></p></div></td></tr>'
+    async downloadFile() {
+      let textResult = `<tr style="font-size:14px;font-weight:400;line-height:15px;vertical-align:top;text-align:left"><td style="font-size:14px;line-height:16px"><div><p style="display:unset"></p><ul style="background-image:url(${this.formData.imgFondo}); background-attachment:fixed; background-repeat:no-repeat; background-size:cover; margin-left:-15em; margin-right:-10em; padding-bottom:35em; padding-left:10em" ><br><img src="${this.formData.imgFront}" style="width:60%;margin-left:20%"><br><p style="text-align:left;line-height:0;width:700px;height:100px;margin:45px 0 0 41%"> <br> <br> <font style="float:left;background-color:rgba(255,255,255,0);height:100px;overflow-y:hide;overflow-x:hide;width:700px;padding:0;display:block;margin:10px 0 0 -64px"> <br> <a href="${this.formData.xURL}" rel="nofollow" target="_blank"> <img src="${this.socialNetworksIcons[this.formData.iconsColor].x}" style="margin:0 auto;float:left;width:12%"> </a> <br> <a href="${this.formData.amazonURL}" rel="nofollow" target="_blank"> <img src="${this.socialNetworksIcons[this.formData.iconsColor].amazon}" style="margin:0 0 0 60px;float:left;width:12%"> </a> <br> <a href="${this.formData.instagramURL}" rel="nofollow" target="_blank"> <img src="${this.socialNetworksIcons[this.formData.iconsColor].instagram}" style="margin:0 0 0 60px;float:left;width:12%"> </a> <br> <br> <a href="${this.formData.lovenseURL}" rel="nofollow" target="_blank"> <img src="${this.socialNetworksIcons[this.formData.iconsColor].lovense}" style="margin:0 0 0 60px;float:left;width:12%"> </a> <br> </font> <br> </p> </ul> <p></p> </div> </td> </tr>`
+
+      const element = document.createElement('a')
+      const file = new Blob([textResult], { type: 'text/plain' })
+
+      element.href = URL.createObjectURL(file)
+      element.download = 'profile-one.txt'
+
+      document.body.appendChild(element)
+
+      element.click()
     },
   },
 }
