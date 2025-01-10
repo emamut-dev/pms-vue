@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit="handleSubmit">
     <div class="row mt-4">
       <div class="col-md-6">
         <div class="input-group">
@@ -89,8 +89,19 @@
     </div>
     <div class="row mt-4">
       <div class="col-md-6">
-        <div class="d-grid">
-          <button class="btn btn-warning" type="submit">Guardar <IconDeviceFloppy /></button>
+        <div class="input-group">
+          <span class="input-group-text" id="icons-color"><IconPalette /></span>
+          <select
+            id="icons-color"
+            class="form-select"
+            @onChange="updateSelectValue($event)"
+            v-model="formData.iconsColor"
+          >
+            <option value="">-- Elija el color de los iconos --</option>
+            <option value="golden">Dorado</option>
+            <option value="silver">Plateado</option>
+            <option value="pink">Rosado</option>
+          </select>
         </div>
       </div>
       <div class="col-md-6">
@@ -104,7 +115,6 @@
 
 <script>
 import {
-  IconDeviceFloppy,
   IconCloudDownload,
   IconLayersSelectedBottom,
   IconLayersSelected,
@@ -112,16 +122,17 @@ import {
   IconBrandAmazon,
   IconBrandInstagram,
   IconFlame,
+  IconPalette,
 } from '@tabler/icons-vue'
 import { useProfile1Store } from '@/stores/profile1'
 
 export default {
   setup() {
-    const { formData } = useProfile1Store()
-    return { formData }
+    const { formData, updateIconsColor } = useProfile1Store()
+
+    return { formData, updateIconsColor }
   },
   components: {
-    IconDeviceFloppy,
     IconCloudDownload,
     IconLayersSelectedBottom,
     IconLayersSelected,
@@ -129,6 +140,21 @@ export default {
     IconBrandAmazon,
     IconBrandInstagram,
     IconFlame,
+    IconPalette,
+  },
+  data() {
+    return {
+      profileOneTemplate: '',
+    }
+  },
+  methods: {
+    updateSelectValue(event) {
+      this.updateIconsColor(event.target.value)
+    },
+    startProfileOneTemplate() {
+      this.profileOneTemplate =
+        '<tr style="font-size:14px;font-weight:400;line-height:15px;vertical-align:top;text-align:left"><td style="font-size:14px;line-height:16px"><div><p style="display:unset"></p><ul style="background-image:url(https://i.ibb.co/PMKTZDt/Fondo-perfil.png);background-attachment:fixed;background-repeat:no-repeat;background-size:cover;margin-left:-15em;margin-right:-10em;padding-bottom:35em;padding-left:10em"><br><img src="https://i.ibb.co/4P8CvkB/Contenido-perfil-2.png" style="width:60%;margin-left:20%"><br><p style="text-align:left;line-height:0;width:700px;height:100px;margin:45px 0 0 41%"><br><br><font style="float:left;background-color:rgba(255,255,255,0);height:100px;overflow-y:hide;overflow-x:hide;width:700px;padding:0;display:block;margin:10px 0 0 -64px"><br><a href="https://x.com/ANAMARIA_RIIOS" rel="nofollow" target="_blank"><img src="https://i.ibb.co/TLfB2LK/x.png" style="margin:0 auto;float:left;width:12%"></a><br><a href="https://www.amazon.com/hz/wishlist/ls/2GCIOGB9BEX6X?ref_=wl_share" rel="nofollow" target="_blank"><img src="https://i.ibb.co/VVDh7mp/amazon.png" style="margin:0 0 0 60px;float:left;width:12%"></a><br><a href="https://www.instagram.com/maria_riios1/" rel="nofollow" target="_blank"><img src="https://i.ibb.co/bmWQYpC/instagram.png" style="margin:0 0 0 60px;float:left;width:12%"></a><br><br><a href="https://www.lovense.com/wish-list/azzckoa" rel="nofollow" target="_blank"><img src="https://i.ibb.co/d2dgcxs/lovense.png" style="margin:0 0 0 60px;float:left;width:12%"></a><br></font><br></p></ul><p></p></div></td></tr>'
+    },
   },
 }
 </script>

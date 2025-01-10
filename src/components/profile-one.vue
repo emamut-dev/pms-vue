@@ -46,19 +46,19 @@
               "
               ><br /><a :href="formData.xURL" rel="nofollow" target="_blank"
                 ><img
-                  src="https://i.ibb.co/5r6mztq/x.png"
+                  :src="socialNetworksIcons[formData.iconsColor].x"
                   style="margin: 0 auto; float: left; width: 12%" /></a
               ><br /><a :href="formData.amazonURL" rel="nofollow" target="_blank"
                 ><img
-                  src="https://i.ibb.co/x7J16w0/amazon.png"
+                  :src="socialNetworksIcons[formData.iconsColor].amazon"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
               ><br /><a :href="formData.instagramURL" rel="nofollow" target="_blank"
                 ><img
-                  src="https://i.ibb.co/2WYBdsR/instagram.png"
+                  :src="socialNetworksIcons[formData.iconsColor].instagram"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
               ><br /><br /><a :href="formData.lovenseURL" rel="nofollow" target="_blank"
                 ><img
-                  src="https://i.ibb.co/VHXWZtp/4.png"
+                  :src="socialNetworksIcons[formData.iconsColor].lovense"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
               ><br /></span
             ><br />
@@ -75,8 +75,8 @@ import { useProfile1Store } from '@/stores/profile1'
 
 export default {
   setup() {
-    const { formData } = useProfile1Store()
-    return { formData }
+    const { formData, socialNetworksIcons } = useProfile1Store()
+    return { formData, socialNetworksIcons }
   },
 }
 </script>
