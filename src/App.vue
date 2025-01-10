@@ -10,7 +10,9 @@
     </div>
   </div>
 
-  <RouterView />
+  <section style="min-height: 70vh">
+    <RouterView />
+  </section>
 
   <div class="container my-5">
     <hr />
