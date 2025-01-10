@@ -3,87 +3,103 @@
     <div class="row mt-4">
       <div class="col-md-6">
         <div class="input-group">
-          <span class="input-group-text" id="background-url"><IconLayersSelectedBottom /></span>
-          <input
-            type="url"
-            class="form-control"
-            id="img-fondo"
-            aria-describedby="background-url"
-            placeholder="URL imagen de fondo"
-            v-model="formData.imgFondo"
-          />
+          <span class="input-group-text"><IconLayersSelectedBottom /></span>
+          <div class="form-floating flex-grow-1">
+            <input
+              type="url"
+              class="form-control"
+              id="img-fondo"
+              aria-describedby="background-url"
+              v-model="formData.imgFondo"
+              placeholder="https://example.com/image.png"
+            />
+            <label for="img-fondo">URL imagen de fondo</label>
+          </div>
         </div>
-        <div class="form-text">Ejemplo: https://example.com/image.png</div>
       </div>
       <div class="col-md-6">
         <div class="input-group">
-          <span class="input-group-text" id="front-url"><IconLayersSelected /></span>
-          <input
-            type="url"
-            class="form-control"
-            id="img-superior"
-            aria-describedby="front-url"
-            placeholder="URL imagen superior"
-            v-model="formData.imgFront"
-          />
+          <span class="input-group-text"><IconLayersSelected /></span>
+          <div class="form-floating flex-grow-1">
+            <input
+              type="url"
+              class="form-control"
+              id="img-superior"
+              aria-describedby="front-url"
+              placeholder="https://example.com/image.png"
+              v-model="formData.imgFront"
+            />
+            <label for="img-superior">URL imagen superior</label>
+          </div>
         </div>
-        <div class="form-text">Ejemplo: https://example.com/image.png</div>
       </div>
     </div>
     <hr />
     <div class="row mt-4">
       <div class="col-md-6">
         <div class="input-group">
-          <span class="input-group-text" id="x-url"><IconBrandX /></span>
-          <input
-            type="url"
-            class="form-control"
-            id="img-superior"
-            aria-describedby="x-url"
-            placeholder="URL de X"
-            v-model="formData.xURL"
-          />
+          <span class="input-group-text"><IconBrandX /></span>
+          <div class="form-floating flex-grow-1">
+            <input
+              type="url"
+              class="form-control"
+              id="x-url"
+              aria-describedby="x-url"
+              placeholder="URL de X"
+              v-model="formData.xURL"
+            />
+            <label for="x-url">URL de x.com</label>
+          </div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="input-group">
-          <span class="input-group-text" id="amazon-url"><IconBrandAmazon /></span>
-          <input
-            type="url"
-            class="form-control"
-            id="img-superior"
-            aria-describedby="amazon-url"
-            placeholder="URL de Amazon"
-            v-model="formData.amazonURL"
-          />
+          <span class="input-group-text"><IconBrandAmazon /></span>
+          <div class="form-floating flex-grow-1">
+            <input
+              type="url"
+              class="form-control"
+              id="amazon-url"
+              aria-describedby="amazon-url"
+              placeholder="URL de Amazon"
+              v-model="formData.amazonURL"
+            />
+            <label for="amazon-url">URL de Amazon</label>
+          </div>
         </div>
       </div>
     </div>
     <div class="row mt-4">
       <div class="col-md-6">
         <div class="input-group">
-          <span class="input-group-text" id="instagram-url"><IconBrandInstagram /></span>
-          <input
-            type="url"
-            class="form-control"
-            id="img-superior"
-            aria-describedby="instagram-url"
-            placeholder="URL de Amazon"
-            v-model="formData.instagramURL"
-          />
+          <span class="input-group-text"><IconBrandInstagram /></span>
+          <div class="form-floating flex-grow-1">
+            <input
+              type="url"
+              class="form-control"
+              id="instagram-url"
+              aria-describedby="instagram-url"
+              placeholder="URL de Amazon"
+              v-model="formData.instagramURL"
+            />
+            <label for="instagram-url">URL de Instagram</label>
+          </div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="input-group">
-          <span class="input-group-text" id="lovense-url"><IconFlame /></span>
-          <input
-            type="url"
-            class="form-control"
-            id="img-superior"
-            aria-describedby="lovense-url"
-            placeholder="URL de Amazon"
-            v-model="formData.lovenseURL"
-          />
+          <span class="input-group-text"><IconFlame /></span>
+          <div class="form-floating">
+            <input
+              type="url"
+              class="form-control"
+              id="lovense-url"
+              aria-describedby="lovense-url"
+              placeholder="URL de Amazon"
+              v-model="formData.lovenseURL"
+            />
+            <label for="lovense-url-url">URL de Lovense</label>
+          </div>
         </div>
       </div>
     </div>
