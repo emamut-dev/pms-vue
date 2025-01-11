@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row mt-4">
       <div class="col">
-        <h1 class="text-center">Generador de Perfiles</h1>
+        <h1 class="font-merryweather text-center">Generador de Perfiles</h1>
         <small v-if="currentPath !== '/'"
           ><RouterLink to="/" class="text-dark"> <IconChevronLeft /> Volver </RouterLink></small
         >
@@ -18,7 +18,7 @@
     <hr />
     <div class="row justify-content-center">
       <div class="col">
-        <p class="text-center">
+        <p class="text-center font-merryweather">
           <small>
             Powered with <IconHeartFilled color="red" /> by
             <a href="https://emamut.netlify.app/" target="_blank">emamut</a>

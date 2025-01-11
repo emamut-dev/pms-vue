@@ -13,6 +13,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fontsource/merriweather": "^5.1.1",
     "@fontsource/poppins": "^5.1.0",
     "@tabler/icons-vue": "^3.26.0",
     "pinia": "^2.3.0",
