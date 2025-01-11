@@ -12,6 +12,8 @@ import '@fontsource/poppins'
 import '@fontsource/poppins/400-italic.css'
 import '@fontsource/poppins/700.css'
 
+import '@fontsource/merriweather'
+
 // Custom CSS
 import './assets/main.css'
 
