@@ -5,7 +5,7 @@ import ProfileOneView from '../views/ProfileOneView.vue'
 
 const routes = [
   { path: '/', component: HomePage },
-  { path: 'profile-one', component: ProfileOneView },
+  { path: '/profile-one', component: ProfileOneView },
 ]
 
 const router = createRouter({
