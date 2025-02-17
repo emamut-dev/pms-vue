@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row mt-4">
       <div class="col">
-        <h1 class="font-merryweather text-center">Generador de Perfiles</h1>
+        <h1 class="font-merryweather text-center">Generador de Perfiles [Beta]</h1>
         <small v-if="currentPath !== '/'"
           ><RouterLink to="/" class="text-dark"> <IconChevronLeft /> Volver </RouterLink></small
         >
