@@ -42,23 +42,23 @@
                 width: 700px;
                 padding: 0;
                 display: block;
-                margin: 10px 0 0 -8px';
+                margin: 10px 0 0 -8px;
               "
               ><br /><a :href="formData.xURL" rel="nofollow" target="_blank"
                 ><img
-                  :src="socialNetworksIcons[formData.iconsColor].x"
+                  :src="activeIcons.x"
                   style="margin: 0 auto; float: left; width: 12%" /></a
               ><br /><a :href="formData.amazonURL" rel="nofollow" target="_blank"
                 ><img
-                  :src="socialNetworksIcons[formData.iconsColor].amazon"
+                  :src="activeIcons.amazon"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
               ><br /><a :href="formData.instagramURL" rel="nofollow" target="_blank"
                 ><img
-                  :src="socialNetworksIcons[formData.iconsColor].instagram"
+                  :src="activeIcons.instagram"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
               ><br /><br /><a :href="formData.lovenseURL" rel="nofollow" target="_blank"
                 ><img
-                  :src="socialNetworksIcons[formData.iconsColor].lovense"
+                  :src="activeIcons.lovense"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
               ><br /></span
             ><br />
@@ -71,12 +71,16 @@
 </template>
 
 <script>
+import { computed } from 'vue'
 import { useProfile1Store } from '@/stores/profile1'
 
 export default {
   setup() {
-    const { formData, socialNetworksIcons } = useProfile1Store()
-    return { formData, socialNetworksIcons }
+    const store = useProfile1Store()
+    const formData = store.formData
+    const activeIcons = computed(() => store.activeIcons)
+
+    return { formData, activeIcons }
   },
 }
 </script>
