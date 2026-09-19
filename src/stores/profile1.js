@@ -42,5 +42,22 @@ export const useProfile1Store = defineStore('profile1', {
     updateIconsColor(value) {
       this.formData.iconsColor = value || 'golden'
     },
+    preloadAllImages() {
+      if (typeof window === 'undefined') return
+
+      const urls = [
+        this.formData.imgFondo,
+        this.formData.imgFront,
+        ...Object.values(this.socialNetworksIcons).flatMap((palette) => Object.values(palette)),
+      ]
+
+      urls.forEach((url) => {
+        if (url) {
+          const img = new Image()
+          img.decoding = 'async'
+          img.src = url
+        }
+      })
+    },
   },
 })

@@ -2,7 +2,16 @@
   <div class="container py-4">
     <div class="row justify-content-center">
       <div class="col-lg-7 col-md-9 text-center mb-4">
-        <img :src="LogoChaturbate" style="width: 13rem" alt="Chaturbate" class="mb-3" />
+        <img
+          :src="LogoChaturbate"
+          style="width: 13rem; height: auto"
+          width="208"
+          height="38"
+          loading="eager"
+          decoding="async"
+          alt="Chaturbate"
+          class="mb-3"
+        />
         <p class="text-muted lead">
           Crea y personaliza plantillas de biografía optimizadas para transmisiones en vivo.
         </p>
@@ -39,8 +48,10 @@
 </template>
 
 <script>
+import { onMounted } from 'vue'
 import { IconArrowRight } from '@tabler/icons-vue'
 import LogoChaturbate from '../assets/logo-chaturbate.svg'
+import { useProfile1Store } from '@/stores/profile1'
 
 export default {
   name: 'HomePage',
@@ -48,6 +59,13 @@ export default {
     IconArrowRight,
   },
   setup() {
+    const store = useProfile1Store()
+
+    onMounted(() => {
+      // Precarga proactiva de imágenes e iconos en segundo plano
+      store.preloadAllImages()
+    })
+
     return { LogoChaturbate }
   },
 }

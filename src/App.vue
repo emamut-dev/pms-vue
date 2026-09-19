@@ -1,29 +1,31 @@
 <template>
-  <header class="border-bottom bg-white py-3 mb-4 shadow-sm">
-    <div class="container d-flex align-items-center justify-content-between">
-      <div class="d-flex align-items-center gap-2">
-        <RouterLink to="/" class="text-decoration-none text-dark d-flex align-items-center gap-2">
-          <h1 class="font-merryweather h4 mb-0 fw-bold">Generador de Perfiles</h1>
-          <span class="badge bg-warning text-dark">Beta</span>
-        </RouterLink>
+  <div class="d-flex flex-column min-vh-100">
+    <header class="border-bottom sticky-top bg-white py-3 mb-4 shadow-sm">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-2">
+          <RouterLink to="/" class="text-decoration-none text-dark d-flex align-items-center gap-2">
+            <h1 class="font-merryweather h4 mb-0 fw-bold">Generador de Perfiles</h1>
+            <span class="badge bg-warning text-dark">Beta</span>
+          </RouterLink>
+        </div>
+        <div>
+          <RouterLink
+            v-if="currentPath !== '/'"
+            to="/"
+            class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center gap-1"
+          >
+            <IconChevronLeft :size="18" /> Volver
+          </RouterLink>
+        </div>
       </div>
-      <div>
-        <RouterLink
-          v-if="currentPath !== '/'"
-          to="/"
-          class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center gap-1"
-        >
-          <IconChevronLeft :size="18" /> Volver
-        </RouterLink>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <main style="min-height: 70vh">
-    <RouterView />
-  </main>
+    <main class="flex-grow-1">
+      <RouterView />
+    </main>
 
-  <MainFooter />
+    <MainFooter />
+  </div>
 </template>
 
 <script>

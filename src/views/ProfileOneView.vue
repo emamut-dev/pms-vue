@@ -42,9 +42,11 @@
 </template>
 
 <script>
+import { onMounted } from 'vue'
 import { IconEye } from '@tabler/icons-vue'
 import StaticForm from '../components/static-form.vue'
 import ProfileOne from '../components/profile-one.vue'
+import { useProfile1Store } from '@/stores/profile1'
 
 export default {
   name: 'ProfileOneView',
@@ -52,6 +54,13 @@ export default {
     IconEye,
     StaticForm,
     ProfileOne,
+  },
+  setup() {
+    const store = useProfile1Store()
+
+    onMounted(() => {
+      store.preloadAllImages()
+    })
   },
 }
 </script>
