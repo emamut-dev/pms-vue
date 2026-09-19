@@ -22,7 +22,12 @@
             width: 100vw;
           "
         >
-          <br /><img :src="formData.imgFront" style="width: 60%; margin-left: 21rem" /><br />
+          <br /><img
+            :src="formData.imgFront"
+            loading="eager"
+            decoding="async"
+            style="width: 60%; margin-left: 21rem"
+          /><br />
           <p
             style="
               text-align: left;
@@ -47,18 +52,26 @@
               ><br /><a :href="formData.xURL" rel="nofollow" target="_blank"
                 ><img
                   :src="activeIcons.x"
+                  loading="eager"
+                  decoding="async"
                   style="margin: 0 auto; float: left; width: 12%" /></a
               ><br /><a :href="formData.amazonURL" rel="nofollow" target="_blank"
                 ><img
                   :src="activeIcons.amazon"
+                  loading="eager"
+                  decoding="async"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
               ><br /><a :href="formData.instagramURL" rel="nofollow" target="_blank"
                 ><img
                   :src="activeIcons.instagram"
+                  loading="eager"
+                  decoding="async"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
               ><br /><br /><a :href="formData.lovenseURL" rel="nofollow" target="_blank"
                 ><img
                   :src="activeIcons.lovense"
+                  loading="eager"
+                  decoding="async"
                   style="margin: 0 0 0 60px; float: left; width: 12%" /></a
               ><br /></span
             ><br />
