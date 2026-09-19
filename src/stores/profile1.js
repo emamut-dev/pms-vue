@@ -32,9 +32,15 @@ export const useProfile1Store = defineStore('profile1', {
       },
     },
   }),
+  getters: {
+    activeIcons: (state) => {
+      const color = state.formData.iconsColor || 'golden'
+      return state.socialNetworksIcons[color] || state.socialNetworksIcons.golden
+    },
+  },
   actions: {
     updateIconsColor(value) {
-      this.formData.iconsColor = value
+      this.formData.iconsColor = value || 'golden'
     },
   },
 })

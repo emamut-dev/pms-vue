@@ -6,7 +6,7 @@
         <p class="text-center">
           <small>
             Powered with <IconHeartFilled color="red" /> by
-            <a href="https://emamut.netlify.app/" target="_blank">emamut</a>
+            <a href="https://emamut.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-decoration-none fw-semibold">emamut</a>
           </small>
         </p>
       </div>
